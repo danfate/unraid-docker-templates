@@ -4,17 +4,15 @@
   <Repository>jc21/nginx-proxy-manager</Repository>
   <Registry>https://hub.docker.com/r/jc21/nginx-proxy-manager/</Registry>
   <Network>bridge</Network>
-  <MyIP/>
   <Privileged>false</Privileged>
   <Support>https://github.com/danfate/unraid_template/</Support>
   <Project/>
   <Overview>nginx-proxy-manager using jc21's image</Overview>
   <Category>Network:Web, Network:Proxy, Tools:Utilities</Category>
   <WebUI>http://[IP]:[PORT:8181]/</WebUI>
-  <TemplateURL/>
+  <TemplateURL>https://raw.githubusercontent.com/danfate/docker-templates/main/danfate/nginxproxymanager.xml</TemplateURL>
   <Icon>https://raw.githubusercontent.com/jlesage/docker-templates/master/jlesage/images/nginx-proxy-manager-icon.png</Icon>
   <ExtraParams/>
-  <PostArgs/>
   <DonateText/>
   <DonateLink/>
   <DonateImg/>
