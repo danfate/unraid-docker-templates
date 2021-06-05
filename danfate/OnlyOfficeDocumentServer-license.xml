@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>OnlyOfficeDocumentServer-license</Name>
+  <Repository>alehoho/oo-ce-docker-license</Repository>
+  <Registry>https://hub.docker.com/r/alehoho/oo-ce-docker-license</Registry>
+  <Network>br1</Network>
+  <MyIP>192.168.1.184</MyIP>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://forums.unraid.net/topic/75588-support-siwats-docker-repository/</Support>
+  <Project>https://www.onlyoffice.com/</Project>
+  <Overview>&#xD;
+    ONLYOFFICE Document Server is an online office suite comprising viewers and editors for texts, spreadsheets and presentations, fully compatible with Office Open XML formats: .docx, .xlsx, .pptx and enabling collaborative editing in real time.&#xD;
+	HTTPS Support can be enable creating a "certs" folder in the data directory and placing onlyoffice.crt and onlyoffice.key in it. Add fonts by placing [fontname].ttf in the font folder and force updating the container.  &#xD;
+  </Overview>
+  <Category>Productivity Tools</Category>
+  <WebUI>http://[IP]:[PORT:80]</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/SiwatINC/unraid-ca-repository/master/docker-template/onlyoffice_document_server.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/SiwatINC/unraid-ca-repository/master/icons/onlyoffice.png</Icon>
+  <ExtraParams>-m 1500m</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1622857577</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>&#xD;
+    ONLYOFFICE Document Server is an online office suite comprising viewers and editors for texts, spreadsheets and presentations, fully compatible with Office Open XML formats: .docx, .xlsx, .pptx and enabling collaborative editing in real time.&#xD;
+	HTTPS Support can be enable creating a "certs" folder in the data directory and placing onlyoffice.crt and onlyoffice.key in it. Add fonts by placing [fontname].ttf in the font folder and force updating the container.  &#xD;
+  </Description>
+  <Networking>
+    <Mode>br1</Mode>
+    <Publish>
+      <Port>
+        <HostPort>1881</HostPort>
+        <ContainerPort>80</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>18444</HostPort>
+        <ContainerPort>443</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/onlyoffice-l/logs</HostDir>
+      <ContainerDir>/var/log/onlyoffice</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/onlyoffice-l/Data</HostDir>
+      <ContainerDir>/var/www/onlyoffice/Data</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/onlyoffice-l/lib</HostDir>
+      <ContainerDir>/var/lib/onlyoffice</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/onlyoffice-l/database</HostDir>
+      <ContainerDir>/var/lib/postgresql</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/onlyoffice-l/fonts</HostDir>
+      <ContainerDir>/usr/share/fonts/</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment/>
+  <Labels/>
+  <Config Name="Host Port 1" Target="80" Default="8080" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always" Required="true" Mask="false">1881</Config>
+  <Config Name="Host Port 2" Target="443" Default="4430" Mode="tcp" Description="Container Port: 443" Type="Port" Display="always" Required="true" Mask="false">18444</Config>
+  <Config Name="Host Path 1" Target="/var/log/onlyoffice" Default="/mnt/user/appdata/onlyofficeds/logs" Mode="rw" Description="Container Path: /var/log/onlyoffice" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/onlyoffice-l/logs</Config>
+  <Config Name="Host Path 2" Target="/var/www/onlyoffice/Data" Default="/mnt/user/appdata/onlyofficeds/Data" Mode="rw" Description="Container Path: /var/www/onlyoffice/Data" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/onlyoffice-l/Data</Config>
+  <Config Name="Host Path 3" Target="/var/lib/onlyoffice" Default="/mnt/user/appdata/onlyofficeds/lib" Mode="rw" Description="Container Path: /var/lib/onlyoffice" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/onlyoffice-l/lib</Config>
+  <Config Name="Host Path 4" Target="/var/lib/postgresql" Default="/mnt/user/appdata/onlyofficeds/database" Mode="rw" Description="Container Path: /var/lib/postgresql" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/onlyoffice-l/database</Config>
+  <Config Name="Host Path 5" Target="/usr/share/fonts/" Default="/mnt/user/appdata/onlyofficeds/fonts" Mode="rw" Description="Container Path: /usr/share/fonts/" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/onlyoffice-l/fonts</Config>
+</Container>

@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>agentdvr</Name>
+  <Repository>doitandbedone/ispyagentdvr:latest</Repository>
+  <Registry/>
+  <Network>br1</Network>
+  <MyIP>192.168.1.197</MyIP>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project/>
+  <Overview/>
+  <Category>HomeAutomation:</Category>
+  <WebUI>http://192.168.1.197:8090</WebUI>
+  <TemplateURL/>
+  <Icon/>
+  <ExtraParams>-m 1500m --memory-swap=1500m --restart=on-failure:3 --mac-address 02:42:c0:a8:01:c5</ExtraParams>
+  <PostArgs/>
+  <CPUset>0,1</CPUset>
+  <DateInstalled>1622857641</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description/>
+  <Networking>
+    <Mode>br1</Mode>
+    <Publish/>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/ispyagentdvr/config/</HostDir>
+      <ContainerDir>/agent/Media/XML/</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/cctv/</HostDir>
+      <ContainerDir>/agent/Media/WebServerRoot/Media/</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment/>
+  <Labels/>
+  <Config Name="Host Path 1" Target="/agent/Media/XML/" Default="" Mode="rw" Description="Container Path: /agent/Media/XML/" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/ispyagentdvr/config/</Config>
+  <Config Name="Host Path 2" Target="/agent/Media/WebServerRoot/Media/" Default="" Mode="rw" Description="Container Path: /agent/Media/WebServerRoot/Media/" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/cctv/</Config>
+</Container>
